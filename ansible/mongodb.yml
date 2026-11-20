@@ -1,0 +1,10 @@
+---
+- name: Install MongoDB
+  hosts: db
+  become: yes
+
+  tasks:
+    - name: Update packages
+      apt:
+        update_cache: yes
+

@@ -1,0 +1,16 @@
+---
+- name: Deploy TravelMemory
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Install git
+      apt:
+        name: git
+        state: present
+
+    - name: Clone repository
+      git:
+        repo: https://github.com/UnpredictablePrashant/TravelMemory.git
+        dest: /opt/TravelMemory
+
